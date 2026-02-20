@@ -29,12 +29,14 @@ ecommerce-churn-prediction/
 ├── .gitignore
 ├── data/
 │   └── cleaned/
-│       ├── customers.csv          # 5,000 customers with segments and churn label
-│       ├── orders.csv             # 43,057 orders with delivery and refund data
-│       ├── rfm_features.csv       # RFM scores + engineered features per customer
-│       └── cohort_data.csv        # Monthly cohort retention counts (29 periods)
-├── docs/
+│       ├── customers.csv 
+│       ├── orders.csv       
+│       ├── rfm_features.csv       
+│       └── cohort_data.csv  
+├── business_understanding/
 │   ├── business_problem_statement.pdf
+│   └── assumptions_limitations.md
+├── documentation/
 │   ├── methodology.md
 │   ├── assumptions_limitations.md
 │   ├── data_dictionary.xlsx
