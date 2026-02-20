@@ -1,0 +1,13 @@
+E-COMMERCE CUSTOMER CHURN PREDICTION
+Classification Report — RF Tuned (v2.0)
+Josiah Nwosu | February 2026
+=======================================================
+
+              precision    recall  f1-score   support
+
+Retained (0)       0.90      0.89      0.90       363
+ Churned (1)       0.94      0.95      0.94       637
+
+    accuracy                           0.93      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.93      0.92      1000

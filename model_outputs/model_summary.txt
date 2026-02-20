@@ -1,0 +1,74 @@
+============================================================
+E-COMMERCE CUSTOMER CHURN PREDICTION
+Model Summary — v2.0 (with hyperparameter tuning)
+Author : Josiah Nwosu
+Date   : February 2026
+============================================================
+
+DATASET
+----------------------------------------
+Total customers      : 5,000
+Churned  (label=1)   : 3,184 (63.7%)
+Retained (label=0)   : 1,816 (36.3%)
+Train set            : 4,000 customers
+Test  set            : 1,000  customers
+Split method         : Stratified 80/20
+
+TUNING CONFIGURATION
+----------------------------------------
+Method               : RandomizedSearchCV
+Trials (n_iter)      : 50
+CV strategy          : StratifiedKFold (5 folds)
+Scoring metric       : AUC-ROC
+Search time          : 896s
+Total combinations   : 6,144
+
+BEST HYPERPARAMETERS FOUND
+----------------------------------------
+  bootstrap                 : True
+  class_weight              : balanced_subsample
+  max_depth                 : None
+  max_features              : 0.5
+  min_samples_leaf          : 10
+  min_samples_split         : 20
+  n_estimators              : 200
+
+CV STABILITY — TUNED MODEL
+----------------------------------------
+  Fold 1 AUC : 0.9820
+  Fold 2 AUC : 0.9833
+  Fold 3 AUC : 0.9750
+  Fold 4 AUC : 0.9841
+  Fold 5 AUC : 0.9845
+  Mean      : 0.9818
+  Std       : 0.0035  (stable)
+
+EVALUATION RESULTS
+----------------------------------------
+Metric                         RF Tuned   RF Default    Log Reg
+  AUC-ROC                        0.9753       0.9746     0.9746
+  Precision                      0.9377       0.9412     0.9487
+  Recall                         0.9451       0.9294     0.8995
+  F1 Score                       0.9414       0.9352     0.9234
+  Precision @ Decile 1           1.0000       1.0000     1.0000
+
+TOP 10 MOST IMPORTANT FEATURES — TUNED MODEL
+----------------------------------------
+   1. recency_days                   0.5162
+   2. R_score                        0.2514
+   3. spend_per_order_ratio          0.0798
+   4. frequency                      0.0342
+   5. monthly_order_rate             0.0325
+   6. tenure_days                    0.0191
+   7. F_score                        0.0147
+   8. avg_order_value                0.0075
+   9. monetary                       0.0070
+  10. total_discounts                0.0063
+
+OUTPUT FILES
+----------------------------------------
+  churn_predictions.csv     — churn scores for all 5,000 customers
+  model_evaluation.png      — ROC curves, confusion matrix, tuning chart
+  tuning_results.csv        — all 50 RandomizedSearchCV trial results
+  classification_report.txt — per-class precision, recall, F1
+  model_summary.txt         — this file
