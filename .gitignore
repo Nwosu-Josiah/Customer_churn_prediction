@@ -1,0 +1,21 @@
+# Data
+data/raw/
+*.db
+*.duckdb
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large model artefacts (keep predictions CSV, ignore raw model object)
+*.pkl
+*.joblib
